@@ -67,6 +67,14 @@ https://yourdomain.com/792ec2272f1145d46283b0865838aedc
   - Tracks the download in Matomo
   - Redirects to /data/filename.ext
 
+### Removing files
+
+- Visit `/remove.php` to delete a file (password required)
+- After login, enter the GUID of the file you want to remove
+- The system will:
+  - Delete the corresponding database record
+  - Remove the physical file from the `data/` directory
+
 ## Security Notes
 
 - Upload access is gated by a simple password (stored in config.php)
