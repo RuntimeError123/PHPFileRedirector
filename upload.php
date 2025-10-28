@@ -4,7 +4,7 @@ session_start();
 
 // Simple password gate
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
-    if ($_POST['password'] === UPLOAD_PASSWORD) {
+    if ($_POST['password'] === ADMIN_PASSWORD) {
         $_SESSION['authenticated'] = true;
     } else {
         die('Invalid password.');
@@ -12,7 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
 }
 
 if (!isset($_SESSION['authenticated'])) {
-    echo '<form method="POST"><input type="password" name="password"><input type="submit" value="Login"></form>';
+    echo '<form method="POST">
+        <input type="password" name="password" placeholder="Admin password" required>
+        <input type="submit" value="Login">
+    </form>';
     exit;
 }
 

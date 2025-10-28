@@ -10,4 +10,4 @@ define('MATOMO_URL', 'https://matomo.domain.nl/matomo.php');
 define('MATOMO_TOKEN', 'token_auth'); // Optional, for IP/User-Agent tracking
 
 // Upload password
-define('UPLOAD_PASSWORD', 'password');
+define('ADMIN_PASSWORD', 'password');
