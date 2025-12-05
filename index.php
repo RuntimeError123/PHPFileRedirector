@@ -18,6 +18,10 @@ if (!$filename) {
     exit;
 }
 
+// Log last access time
+$update = $pdo->prepare("UPDATE files SET last_accessed = NOW() WHERE guid = ?");
+$update->execute([$guid]);
+
 // Build dynamic base URL (protocol + host)
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
 $host = $_SERVER['HTTP_HOST'];
