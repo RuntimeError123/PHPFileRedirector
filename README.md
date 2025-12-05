@@ -59,21 +59,15 @@ RewriteRule ^ index.php [QSA,L]
 
 ## Usage
 
-- Visit /upload.php to upload a file (password required)
+- Visit /admin.php to upload a file (password required)
 - After upload, you'll receive a link like: 
 https://yourdomain.com/792ec2272f1145d46283b0865838aedc
-- When accessed, the system:
+- When accessed, the application:
   - Looks up the GUID
   - Tracks the download in Matomo
   - Redirects to /data/filename.ext
 
-### Removing files
-
-- Visit `/remove.php` to delete a file (password required)
-- After login, enter the GUID of the file you want to remove
-- The system will:
-  - Delete the corresponding database record
-  - Remove the physical file from the `data/` directory
+The admin.php shows all files in the table and allows an admin to remove them.
 
 ## Security Notes
 
